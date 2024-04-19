@@ -33,8 +33,14 @@ p Regexp.new('abc').frozen?
 
 == Class Methods
 
+#@since 3.3
+--- compile(string, option = nil) -> Regexp
+--- new(string, option = nil) -> Regexp
+#@end
+#@until 3.3
 --- compile(string, option = nil, code = nil) -> Regexp
 --- new(string, option = nil, code = nil) -> Regexp
+#@end
 
 文字列 string をコンパイルして正規表現オブジェクトを生成して返します。
 
@@ -48,10 +54,10 @@ p Regexp.new('abc').frozen?
               [[c:Integer]] 以外であれば真偽値の指定として見なされ
               、真(nil, false 以外)であれば
               [[m:Regexp::IGNORECASE]] の指定と同じになります。
-
+#@until 3.3
 @param code "n", "N" が与えられた時には、生成された正規表現のエンコーディングは ASCII-8BIT になります。
             それ以外の指定は警告を出力します。
-
+#@end
 @raise  RegexpError 正規表現のコンパイルに失敗した場合発生します。
 
 #@samplecode 例
